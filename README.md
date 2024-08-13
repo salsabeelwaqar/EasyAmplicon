@@ -6,27 +6,27 @@ The Chinese version in (中文版见) [README_cn.md](./README_cn.md)
 
 Version：v1.21
 
-Update：2024/08/05
+Update：2024/08/12
 
 ## Pipeline manual and file description
 
-Using RStudio to open the pipeline available in Chinese (pipeline.sh) and English (pipeline_en.sh)
+Use RStudio to open the pipeline script, available in Chinese (pipeline.sh) and English (pipeline_en.sh)
 
 Files Description:
 
-- Readme.md # Introduction and install
-- pipeline.sh # Command-line analysis for Windows and Linux (available in Chinese and English) 
-- pipeline_mac.sh # Command-line analysis for MacOS
-- result/ # Example result data
-- result/Diversity.Rmd # Interactive diversity analysis in R and output reproducible report in HTML format
+- Readme.md # Introduction and installation instructions.
+- pipeline.sh # Command-line analysis script for Windows and Linux (available in both Chinese and English). 
+- pipeline_mac.sh # Command-line analysis script for MacOS.
+- result/ # Dirctory containing example result data.
+- result/Diversity.Rmd # Interactive diversity analysis in R, generating a reproducible report in HTML format.
 
 ## What can we do? 
 
-- Analysis and visualization of microbiome data, especially for 16S rDNA amplicon;
-- From raw data into feature tables;
-- Support 20+ analysis methods and publish-ready visualization;
-- Finish your project on your laptop in short time (approx 3 hours);
-- Supporting materials manual and videos in Chinese/English.
+- Perform comprehensive analysis and visualization of microbiome data, especially for 16S rDNA amplicon.
+- Process raw data into feature tables.
+- Support over 20 analysis methods, with visualization ready for publication.
+- Complete your project on a laptop in a short time (approximately 3 hours).
+- Supporting materials, including manuals and instructional videos, are available in Chinese and English.
 
 ![image](http://www.imeta.science/github/EasyAmplicon/result/Figure1.jpg)
 
@@ -50,18 +50,20 @@ Files Description:
 
 All the software backups can be found in 
 
-- FTP: [Filezilla](https://filezilla-project.org/index.php) visiting FTP download.nmdc.cn in anonymous. In the tools directory, you can find all the software and packages in amplicon and different systems supporting such mac, win
+- FTP: Access via Filezilla [Filezilla](https://filezilla-project.org/index.php) by visiting FTP download.nmdc.cn anonymously. Navigate to the "tools" directory to find all required software and packages for amplicon analysis, supporting various systems like macOS and Windows.
 - Baidu Net Disk：https://pan.baidu.com/s/1Ikd_47HHODOqC3Rcx6eJ6Q?pwd=0315 
 
 Please install the dependency software according to your system (Win/Mac/Linux).
 
-- R 4.x.x is recommended for running R scripts https://www.r-project.org/. It is also recommended that Rtools be installed for source code packages.
-- RStudio 2023.xx.x is a integrated development environment for R https://posit.co/download/rstudio-desktop/
-- STAMP v2.1.3 http://kiwi.cs.dal.ca/Software/STAMP 
-- Git for Windows 2.xx.x (Windows only) http://gitforwindows.org/
-- R packages quick install
+- R 4.x.x: Recommended for running R scripts and can be downloaded from R Project (https://www.r-project.org/). It is recommended that Rtools be installed to support source code packages.
 
-The statistics and visualization may require > 500 R packages. Installation is time-consuming and may also rely on other compilation tools. You can download all needed R packages in https://pan.baidu.com/s/1Ikd_47HHODOqC3Rcx6eJ6Q?pwd=0315 db/win/4.x.zip or db/mac/R4.2_mac_libraryX86_64.zip, then unzip and take the `4.x` folder in C:\Users\[$UserName]\AppData\Local\R\win-library\
+- RStudio 2023.xx.x: An integrated development environment for R and can be downloaded from this link https://posit.co/download/rstudio-desktop/.
+  
+- STAMP v2.1.3:Statistical analysis software. The download link is http://kiwi.cs.dal.ca/Software/STAMP.
+  
+- Git for Windows 2.xx.x: This tool provides a shell command environment for Windows users only, which can be utilized in the RStudio Terminal, and can be downloaded from this link http://gitforwindows.org/.
+  
+- Quick install R packages: The statistics and visualization may require > 500 R packages. Installation is time-consuming and may also rely on other compilation tools. To simplify this process, users can directly download the necessary R packages from this link http://www.imeta.science/db/win/4.3.zip. Alternatively, the user can download all needed R packages at https://pan.baidu.com/s/1Ikd_47HHODOqC3Rcx6eJ6Q?pwd=0315, inside db/win/4.x.zip or db/mac/R4.2_mac_libraryX86_64.zip. After downloading, unzip the files and place the 4.x folder in your system C:\Users[$UserName]\AppData\Local\R\win-library\ to complete the installation.
 
 ### Install EasyAmplicon 
 
@@ -70,34 +72,33 @@ The statistics and visualization may require > 500 R packages. Installation is t
 - EasyAmplicon pipeline (Positive control) https://github.com/YongxinLiu/EasyAmplicon
 - EasyMicrobiome includes scripts and databases https://github.com/YongxinLiu/EasyMicrobiome
 
-Download the project in C: or D: then unzip (keep the directory name exactly the software name)
+Download and save the project in C: or D drive. Then, unzip the folder and keep the directory name exactly the software name.
 
-- Method 2. Download by the mirror site in BaiduNetDisk: https://pan.baidu.com/s/1Ikd_47HHODOqC3Rcx6eJ6Q?pwd=0315 db/soft/EasyAmplicon.tar.gz or EasyMicrobiome.tar.gz
+- Method 2. Download from the mirror site on BaiduNetDisk: https://pan.baidu.com/s/1Ikd_47HHODOqC3Rcx6eJ6Q?pwd=0315, inside db/soft/EasyAmplicon.tar.gz or EasyMicrobiome.tar.gz
 
-- Method 3. `git clone https://github.com/YongxinLiu/EasyAmplicon` and `git clone https://github.com/YongxinLiu/EasyMicrobiome`. Note: `fatal: unable to access` can retry.
+- Method 3. Clone the repositories using GIT: git clone https://github.com/YongxinLiu/EasyAmplicon and git clone https://github.com/YongxinLiu/EasyMicrobiome. Note: If the user encounters a `fatal: unable to access` error. please retry the command.
 
 ## Quick Start 
 
 Using Windows 10+ as an example:
 
-1. Open RStudio, and set the terminal as Git Bash (Tools -- Global Options -- Terminal -- New terminals -- Git Bash -- OK)
-2. File -- Open File -- `EasyAmplicon` folder -- pipeline.sh (windows/linux) or pipeline_mac.sh (mac)
-3. Setup the `work directory`(wd), and `EasyMicrobiome directory`(db), then run each line by clicking run in the top right corner
+1. Open RStudio, and set the terminal as Git Bash (Tools -- Global Options -- Terminal -- New terminals -- Git Bash -- OK).
+2. File -- Open File -- `EasyAmplicon` folder -- pipeline.sh (windows/linux) or pipeline_mac.sh (mac).
+3. Set up the `working directory`(wd) to amplicon/EasyAmplicon, and database directory (db) to EasyMicrobiome. Follow the instructions provided in the pipeline scripts before running the code. To complete the analysis process, execute the code line by line for each section by clicking 'Run' in the top right corner. 
 
 ## Example dataset 
 
-- seq/ # raw sequencing in zipped fastq format, backup can download by metadata from GSA https://ngdc.cncb.ac.cn/gsa/
-- result/ # Example data and figures for standard pipeline, such as alpha, beta, tax
-- advanced/ # Example of advanced analysis, included data, scripts and output figures
-
+- seq/ # Contains raw sequencing data in zipped FASTQ format. Backup data can be downloaded via metadata from raw sequencing in zipped fastq format, backup can download by metadata from GSA https://ngdc.cncb.ac.cn/gsa/
+- result/ # Includes example data and figures for standard pipeline analyses, such as alpha diversity, beta diversity, and taxonomic composition.
+- advanced/ # Contains examples of advanced analyses, including data, scripts, and output figures.
 ## FAQ 
 
-Frequently Asked Questions in pipeline.sh
+Frequently Asked Questions refer to pipeline.sh
 
-Note: All the .sh script is written in markdown format, using Youdao Note or VSCode for a better reading experience.
+Note: All .sh script is written in markdown format. For an enhanced reading experience, use Youdao Note or VSCode.
 
 ## Citation
-If use this script, please cite:
+If you use this script, please cite:
 
 **Yong-Xin Liu**, Lei Chen, Tengfei Ma, Xiaofang Li, Maosheng Zheng, Xin Zhou, Liang Chen, Xubo Qian, Jiao Xi, Hongye Lu, Huiluo Cao, Xiaoya Ma, Bian Bian, Pengfan Zhang, Jiqiu Wu, Ren-You Gan, Baolei Jia, Linyang Sun, Zhicheng Ju, Yunyun Gao, **Tao Wen**, **Tong Chen**. 2023. EasyAmplicon: An easy-to-use, open-source, reproducible, and community-based pipeline for amplicon data analysis in microbiome research. **iMeta** 2: e83. https://doi.org/10.1002/imt2.83
 
